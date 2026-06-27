@@ -14,8 +14,12 @@ connectDB();
 const app = express();
 
 // Middlewares
-app.use(cors());
-app.use(express.json());
+//app.use(cors());
+//app.use(express.json());
+app.use(cors({
+    origin: "*",
+    credentials: true
+}));
 
 // Routes
 app.use("/api/auth", authRoutes);
